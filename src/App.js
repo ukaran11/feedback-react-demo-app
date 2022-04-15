@@ -1,11 +1,14 @@
 import React from 'react'
+import FeedbackItem from './components/FeedbackItem'
 import Header from './components/Header'
 
 const App = () => {
   return (
       <>
         <Header/>
-        <div>App</div>
+        <div className='container'>
+            <FeedbackItem />
+        </div>
       </>
   )
 }
