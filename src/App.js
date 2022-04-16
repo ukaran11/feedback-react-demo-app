@@ -18,7 +18,7 @@ const App = () => {
   }
 
   const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4();
+    newFeedback.id = +uuidv4();
     setFeedback([newFeedback, ...feedback])
   }
 
