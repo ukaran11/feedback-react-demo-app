@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4} from 'uuid';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import FeedbackForm from './components/FeedbackForm'
 import FeedbackItem from './components/FeedbackItem'
 import FeedbackList from './components/FeedbackList'
@@ -9,6 +9,7 @@ import Header from './components/Header'
 import FeedbackData from './data/FeedbackData'
 import AboutPage from './pages/AboutPage';
 import AboutIconLink from './components/AboutIconLink';
+import { FeedbackProvider } from './context/FeedbackContext';
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -25,6 +26,7 @@ const App = () => {
   }
 
   return (
+    <FeedbackProvider>
       <Router>
         <Header/>
         <div className='container'>
@@ -43,6 +45,7 @@ const App = () => {
         </Routes>
         </div>
       </Router>
+    </FeedbackProvider>
   )
 }
 
