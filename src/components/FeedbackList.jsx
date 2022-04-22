@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import FeedbackItem from './FeedbackItem'
 import FeedbackContext from '../context/FeedbackContext';
 
-const FeedbackList = ({ handleDelete}) => {
+const FeedbackList = () => {
   const { feedback } = useContext(FeedbackContext);
 
   if(!feedback || feedback.length === 0) {
@@ -23,7 +23,6 @@ const FeedbackList = ({ handleDelete}) => {
                 <FeedbackItem 
                     key={item.id} 
                     item={item} 
-                    handleDelete={handleDelete}
                 />
             </motion.div>
         ))}
